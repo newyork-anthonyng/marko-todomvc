@@ -12,9 +12,7 @@ static function filterTodos() {
       remainingCount++;
     }
 
-    if (todo.pending) {
-      return true;
-    } else if (filter === 'active') {
+    if (filter === 'active') {
       return !todo.completed;
     } else if (filter === 'completed') {
       return todo.completed;

@@ -1,11 +1,3 @@
-.todo-list li.pending .toggle, .todo-list li.pending button {
-  visibility: hidden;
-}
-
-.todo-list li.pending label {
-  color: #d9d9d9;
-}
-
 .todo-list li {
   opacity: 1;
   background-color: #fff;
