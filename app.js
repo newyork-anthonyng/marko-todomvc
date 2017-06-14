@@ -60,12 +60,6 @@ class TodoApp extends EventEmitter {
     });
   }
 
-  /**
-   * Private method for committing the changes to a todo item by
-   * making a service call to the backend.
-   *
-   * @param {Object} todo The todo item to update on the backend
-   */
   updateTodo(todoId, newProps) {
     this.todos = this.todos.slice(0);
 
