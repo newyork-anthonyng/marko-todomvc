@@ -21,7 +21,7 @@ module.exports = {
   },
 
   handleCheckboxChange(event, input) {
-    var completed = input.checked === true;
+    var completed = input.checked;
     todoApp.setTodoCompleted(this.input.id, completed);
   },
 
@@ -38,6 +38,7 @@ module.exports = {
     if (this.state.isEditing) {
       var inputEl = this.getEl('titleInput');
       inputEl.focus();
+      /* Put cursor at the end of the input field */
       var val = inputEl.value;
       inputEl.value = '';
       inputEl.value = val;
@@ -63,20 +64,13 @@ module.exports = {
       node.style.opacity = 0;
 
       setTimeout(() => {
-          event.detach();
+        event.detach();
       }, 250);
     }, 0);
   },
 
   handleAttach(event, node) {
-    var clone = node.cloneNode(true);
-    clone.style.position = 'absolute';
-    clone.style.top = '-200px';
-    clone.style.left = '-200px';
-    node.parentNode.appendChild(clone);
-    var height = clone.offsetHeight;
-
-    clone.parentNode.removeChild(clone);
+    var height = node.offsetHeight;
 
     node.classList.remove('animate');
     node.style.maxHeight = '0px';
